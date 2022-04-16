@@ -3,25 +3,30 @@ Rails.application.routes.draw do
 
   # -- CRUD --
 
-  # CREATE
-  # get the restaurant form : new
-  get 'tasks/new', to: 'tasks#new'
+  resources :tasks
 
-  # post the restaurant in restaurant : create
-  post 'tasks', to: 'tasks#create'
+  # # CREATE
+  # # get the restaurant form : new
+  # get 'tasks/new', to: 'tasks#new', as: :new_task
 
-  # READ
-  # read all  : index
-  get 'tasks', to: 'tasks#index'
+  # # post the restaurant in restaurant : create
+  # post 'tasks', to: 'tasks#create'
 
-  # read : show
-  get 'tasks/:id', to: 'tasks#show'
+  # # READ
+  # # read all  : index
+  # get 'tasks', to: 'tasks#index'
 
-  # UPDATE
-  # get the restaurant form : edit
+  # # read : show
+  # get 'tasks/:id', to: 'tasks#show', as: :task
 
-  # post the restaurant in restaurant : update
+  # # UPDATE
+  # # get the restaurant form : edit
+  # get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
 
-  # DELETE : destroy
+  # # post the restaurant in restaurant : update
+  # patch 'tasks/:id', to: 'tasks#update'
+  # # DELETE : destroy
+
+  # delete 'tasks/:id', to: 'tasks#destroy'
 
 end
